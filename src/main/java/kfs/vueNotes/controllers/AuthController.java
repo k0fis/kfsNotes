@@ -108,21 +108,12 @@ public class AuthController {
 
     @PostConstruct
     public void initDefaultValues(){
-        Set<Role> roles = Arrays.stream(ERole.values()).map(Enum::name).map(role->
+        Arrays.stream(ERole.values()).map(Enum::name).forEach(role->
             roleRepository.findByName(role).orElseGet(()->{
                 log.info("Create ROLE {}", role);
                 Role newRole = new Role();
                 newRole.setName(role);
-                return roleRepository.save(newRole);
-            })).collect(Collectors.toSet());
-        if (!userRepository.existsByUsername("kofis")) {
-            log.info("Create User kofis");
-            User kofis = new User();
-            kofis.setUsername("kofis");
-            kofis.setEmail("kofis@kofis.eu");
-            kofis.setPassword(encoder.encode("pako"));
-            kofis.setRoles(roles);
-            userRepository.save(kofis);
-        }
+                roleRepository.save(newRole);
+            }));
     }
 }
