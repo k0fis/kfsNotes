@@ -1,0 +1,12 @@
+target/
+/src/main/resources/public/**
+/kfsvuenote/node_modules
+/kfsvuenote/dist
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+.idea
+*.iws
+*.iml
+*.ipr
