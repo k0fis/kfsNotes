@@ -113,7 +113,7 @@ public class AuthController {
                 log.info("Create ROLE {}", role);
                 Role newRole = new Role();
                 newRole.setName(role);
-                roleRepository.save(newRole);
+                return roleRepository.save(newRole);
             }));
     }
 }

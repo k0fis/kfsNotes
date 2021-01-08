@@ -2,7 +2,13 @@
   <div class="about">
     <v-card>
       <v-card-title>kfs NOTE's application</v-card-title>
-      <v-card-text>Simple text notes. App for mental exercise for create web VueJS app with JWT token.
+      <v-card-text>Simple text notes.
+        App for mental exercise for learning <a href="https://vuejs.org>">VueJS</a>
+        and create app with <a href="https://jwt.io">JWT</a> token.
+        There is also <a href="https://en.wikipedia.org/wiki/Progressive_web_application">PWA</a>,
+        so You can add "bookmark" on celly phone. Apple SE MMXX tested.
+        Backend is <a href="https://spring.io">Spring.io</a> powered, with H2 file db.
+
         <a href="https://github.com/k0fis/kfsNotes.git">src</a>.
       </v-card-text>
       <v-card-actions v-if="this.$store.state.auth.user">
